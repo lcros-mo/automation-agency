@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'AutoFlow - Automatización de Procesos Empresariales',
-  description: 'Transformamos procesos manuales en flujos automatizados que funcionan 24/7. Consultoría especializada en automatización con n8n.',
-  keywords: 'automatización, n8n, procesos empresariales, CRM, email marketing, consultoría',
+  description: 'Transformamos procesos manuales en flujos automatizados que funcionan 24/7. Consultoría especializada en automatización empresarial.',
+  keywords: 'automatización procesos, integración herramientas, consultoría automatización, flujos trabajo, optimización empresarial',
 }
 
 export default function RootLayout({
