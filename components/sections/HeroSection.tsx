@@ -5,6 +5,7 @@ import Link from 'next/link';
 import TrueFocus from '../ui/animations/TrueFocus';
 import Galaxy from '../ui/backgrounds/Galaxy';
 import GradientText from '../ui/animations/GradientText';
+import LogoLoop, { techStack } from '../ui/animations/LogoLoop';
 
 export default function HeroSection() {
   return (
@@ -84,19 +85,11 @@ export default function HeroSection() {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-16">
-            <p className="text-blue-300 mb-6">Tecnologías que dominamos:</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-              <div className="text-blue-200 font-semibold">n8n</div>
-              <div className="text-blue-200">•</div>
-              <div className="text-blue-200 font-semibold">Zapier</div>
-              <div className="text-blue-200">•</div>
-              <div className="text-blue-200 font-semibold">Make</div>
-              <div className="text-blue-200">•</div>
-              <div className="text-blue-200 font-semibold">HubSpot</div>
-              <div className="text-blue-200">•</div>
-              <div className="text-blue-200 font-semibold">Shopify</div>
-            </div>
+          <div className="mt-20">
+            <p className="text-blue-300 mb-8 text-sm uppercase tracking-wider">
+              Integraciones que dominamos
+            </p>
+            <LogoLoop items={techStack} speed={30} />
           </div>
 
         </div>
