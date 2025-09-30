@@ -1,451 +1,317 @@
 // app/services/page.tsx
 'use client';
 
-import Link from 'next/link';
+import ServiceCard from '@/components/ServiceCard';
+import Footer from '@/components/Footer';
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Servicios de Automatización
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              Soluciones probadas que generan ROI desde el primer mes. 
-              Implementación rápida, resultados garantizados.
-            </p>
+    <>
+      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+        
+        {/* Hero Section - Con mención a IA */}
+        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl">
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Automatización + IA que funciona desde el día uno
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                Implementamos flujos de trabajo automatizados potenciados por IA que ahorran tiempo real, 
+                eliminan errores y escalan con tu negocio. Desde OCR hasta asistentes virtuales.
+              </p>
+              <div className="flex items-center gap-6 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full" />
+                  <span>2-4 semanas de implementación</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full" />
+                  <span>ROI medible desde mes 1</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Services Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+        {/* Services Grid - Bento Layout */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
             
-            {/* Email Marketing Automation */}
-            <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Email Marketing Automation</h2>
-                  <p className="text-blue-600 font-semibold">ROI promedio: 300%</p>
-                </div>
-              </div>
+            {/* Grid with featured service */}
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
               
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">¿Qué incluye?</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Secuencias de bienvenida automatizadas
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Segmentación automática de leads
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Follow-up inteligente basado en comportamiento
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Integración CRM + Email Marketing
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Reportes automáticos de conversión
-                  </li>
-                </ul>
-              </div>
+              {/* Featured Service - IA & Automatización Avanzada */}
+              <ServiceCard
+                featured
+                aiPowered
+                title="IA & Automatización Avanzada"
+                description="Asistentes virtuales inteligentes, OCR para procesamiento de documentos y clasificación automática. Automatización de próxima generación."
+                features={[
+                  'Asistentes virtuales con IA (chatbots email/web)',
+                  'OCR y procesamiento inteligente de documentos',
+                  'Clasificación automática de emails y tickets',
+                  'Análisis predictivo y lead scoring con IA',
+                  'Extracción de datos de facturas/contratos'
+                ]}
+                pricing="€1,500 - €3,500"
+                timeline="2-4 semanas"
+              />
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">Herramientas compatibles:</h3>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 text-sm">
-                    Mailchimp, ConvertKit, ActiveCampaign, HubSpot, Klaviyo, 
-                    GetResponse, MailerLite, Sendinblue, Campaign Monitor...
-                  </p>
-                  <p className="text-blue-600 font-semibold mt-2">
-                    +50 plataformas de email marketing
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-t pt-6">
-                <div className="flex justify-between items-center mb-4">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">€800 - €1,500</p>
-                    <p className="text-sm text-gray-600">Setup completo + 2 meses soporte</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-600">Implementación</p>
-                    <p className="font-semibold">1-2 semanas</p>
-                  </div>
-                </div>
-                <Link 
-                  href="/contact"
-                  className="w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors block"
-                >
-                  Solicitar Consulta
-                </Link>
+              {/* Regular Services */}
+              <div className="grid gap-6">
+                <ServiceCard
+                  aiPowered
+                  badge="AI-Enhanced"
+                  title="Email Marketing Automation"
+                  description="Secuencias automatizadas con segmentación inteligente y clasificación por IA."
+                  features={[
+                    'Nurturing automático con personalización IA',
+                    'Segmentación basada en comportamiento',
+                    'A/B testing automatizado'
+                  ]}
+                  pricing="€800 - €1,500"
+                  timeline="1-2 semanas"
+                />
+                
+                <ServiceCard
+                  aiPowered
+                  badge="AI Chatbot"
+                  title="E-commerce Automation"
+                  description="Gestión de inventario y atención al cliente 24/7 con asistente virtual IA."
+                  features={[
+                    'Chatbot IA para atención 24/7',
+                    'Sincronización automática de stock',
+                    'Follow-ups inteligentes post-compra'
+                  ]}
+                  pricing="€1,000 - €2,200"
+                  timeline="2-3 semanas"
+                />
               </div>
             </div>
 
-            {/* E-commerce Automation */}
-            <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-green-100 p-3 rounded-lg mr-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">E-commerce Automation</h2>
-                  <p className="text-green-600 font-semibold">Ahorro: 15-25h/semana</p>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">¿Qué automatizamos?</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Gestión automática de inventarios
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Procesamiento de pedidos
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Notificaciones automáticas de stock
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Customer service chatbots
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Sincronización multi-plataforma
-                  </li>
-                </ul>
-              </div>
+            {/* Bottom row */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <ServiceCard
+                aiPowered
+                badge="AI Scoring"
+                title="CRM Automation"
+                description="Pipeline automático con lead scoring predictivo por IA."
+                features={[
+                  'Lead scoring con IA predictiva',
+                  'Captura automática desde redes sociales',
+                  'Sincronización multi-plataforma',
+                  'Reportes ejecutivos automáticos'
+                ]}
+                pricing="€1,200 - €2,800"
+                timeline="1-2 semanas"
+              />
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">Plataformas compatibles:</h3>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 text-sm">
-                    Shopify, WooCommerce, PrestaShop, Magento, BigCommerce, 
-                    Amazon, eBay, Mercado Libre, Etsy...
-                  </p>
-                  <p className="text-green-600 font-semibold mt-2">
-                    +30 plataformas e-commerce
-                  </p>
-                </div>
-              </div>
+              <ServiceCard
+                badge="Social Media"
+                title="Social Media Automation"
+                description="Automatiza captura de leads y reporting cross-platform."
+                features={[
+                  'LinkedIn/Instagram leads → CRM',
+                  'Content repurposing automático',
+                  'Social listening & alerts',
+                  'Analytics multi-plataforma'
+                ]}
+                pricing="€600 - €1,500"
+                timeline="1 semana"
+              />
 
-              <div className="border-t pt-6">
-                <div className="flex justify-between items-center mb-4">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">€1,200 - €2,200</p>
-                    <p className="text-sm text-gray-600">Setup completo + 2 meses soporte</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-600">Implementación</p>
-                    <p className="font-semibold">2-3 semanas</p>
-                  </div>
-                </div>
-                <Link 
-                  href="/contact"
-                  className="w-full bg-green-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors block"
-                >
-                  Solicitar Consulta
-                </Link>
-              </div>
+              <ServiceCard
+                title="Consultoría Custom"
+                description="Workflows complejos, integraciones legacy y APIs custom para tu industria."
+                features={[
+                  'Auditoría completa de procesos',
+                  'Integración con sistemas legacy',
+                  'Workflows multi-departamento',
+                  'Soluciones con IA a medida'
+                ]}
+                pricing="€2,000 - €5,000"
+                timeline="3-6 semanas"
+              />
             </div>
 
-            {/* CRM Integration */}
-            <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-purple-100 p-3 rounded-lg mr-4">
-                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">CRM Integration</h2>
-                  <p className="text-purple-600 font-semibold">90% menos errores de datos</p>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">¿Qué automatizamos?</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Captura automática de leads
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Sincronización de datos en tiempo real
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Pipeline automation por scoring
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Reportes automáticos de ventas
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Integraciones múltiples herramientas
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">Herramientas compatibles:</h3>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 text-sm">
-                    HubSpot, Salesforce, Pipedrive, Zoho, Monday.com, Airtable, 
-                    ClickUp, Google Workspace, Office 365...
-                  </p>
-                  <p className="text-purple-600 font-semibold mt-2">
-                    +100 integraciones CRM disponibles
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-t pt-6">
-                <div className="flex justify-between items-center mb-4">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">€1,200 - €2,800</p>
-                    <p className="text-sm text-gray-600">Setup completo + 2 meses soporte</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-600">Implementación</p>
-                    <p className="font-semibold">1-2 semanas</p>
-                  </div>
-                </div>
-                <Link 
-                  href="/contact"
-                  className="w-full bg-purple-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors block"
-                >
-                  Solicitar Consulta
-                </Link>
-              </div>
+            {/* CTA Card */}
+            <div className="mt-6 bg-gray-900 text-white rounded-2xl p-8 text-center">
+              <h3 className="text-2xl font-bold mb-4">
+                ¿No estás seguro qué necesitas?
+              </h3>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Agenda una consulta gratuita de 30 minutos. Analizamos tu caso específico 
+                y te mostramos exactamente qué puedes automatizar con IA.
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              >
+                Consulta gratuita
+                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
-
-            {/* Custom Consulting */}
-            <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-orange-100 p-3 rounded-lg mr-4">
-                  <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Consultoría Custom</h2>
-                  <p className="text-orange-600 font-semibold">Soluciones a medida</p>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">¿Para qué casos?</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Automatizaciones específicas de tu industria
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Integración con sistemas legacy
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Workflows complejos multi-departamento
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    APIs custom y webhooks avanzados
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-500 mr-2 font-bold">✓</span>
-                    Consultoría estratégica completa
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">Sectores de especialización:</h3>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-gray-700 text-sm">
-                    Inmobiliarias, Agencias de marketing, Consultoría, 
-                    Educación online, SaaS, Servicios profesionales...
-                  </p>
-                  <p className="text-orange-600 font-semibold mt-2">
-                    Solución personalizada para tu sector
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-t pt-6">
-                <div className="flex justify-between items-center mb-4">
-                  <div>
-                    <p className="text-2xl font-bold text-gray-900">€2,000 - €5,000</p>
-                    <p className="text-sm text-gray-600">Proyecto completo + soporte extendido</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-600">Implementación</p>
-                    <p className="font-semibold">3-6 semanas</p>
-                  </div>
-                </div>
-                <Link 
-                  href="/contact"
-                  className="w-full bg-orange-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors block"
-                >
-                  Solicitar Consulta
-                </Link>
-              </div>
-            </div>
-
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Nuestro Proceso
+        {/* Technologies Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Tecnologías que usamos
+              </h2>
+              <p className="text-gray-600">
+                n8n, OpenAI, Claude AI, y más de 400 integraciones
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+              {[
+                { name: 'n8n', tag: 'Core' },
+                { name: 'OpenAI', tag: 'IA' },
+                { name: 'Claude AI', tag: 'IA' },
+                { name: 'HubSpot', tag: 'CRM' },
+                { name: 'Shopify', tag: 'E-commerce' },
+                { name: 'Salesforce', tag: 'CRM' },
+                { name: 'Zapier', tag: 'Integración' },
+                { name: 'Make', tag: 'Integración' },
+                { name: 'Stripe', tag: 'Pagos' },
+                { name: 'Slack', tag: 'Comunicación' }
+              ].map((tool) => (
+                <div key={tool.name} className="text-center">
+                  <div className="text-gray-900 font-semibold mb-1">{tool.name}</div>
+                  <div className="text-xs text-gray-500">{tool.tag}</div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-sm text-gray-500">
+                Y más de 400 herramientas adicionales via API
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section - Simplified */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+              Cómo trabajamos
             </h2>
-            <p className="text-xl text-gray-600">
-              Metodología probada para resultados rápidos y efectivos
+            
+            <div className="space-y-8">
+              {[
+                {
+                  step: '01',
+                  title: 'Consulta inicial',
+                  description: 'Analizamos tus procesos actuales y identificamos oportunidades de automatización + IA con ROI claro.'
+                },
+                {
+                  step: '02',
+                  title: 'Propuesta técnica',
+                  description: 'Diseñamos la solución óptima (n8n + IA cuando aplique) con timeline realista y presupuesto transparente.'
+                },
+                {
+                  step: '03',
+                  title: 'Implementación',
+                  description: 'Construimos, probamos y desplegamos. Trabajamos en sprints con demos semanales.'
+                },
+                {
+                  step: '04',
+                  title: 'Soporte continuo',
+                  description: 'Monitoreamos, optimizamos y escalamos. Soporte técnico incluido durante 2-3 meses.'
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-6 items-start">
+                  <div className="flex-shrink-0 w-16 h-16 bg-gray-900 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                    {item.step}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ - Minimal */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12">
+              Preguntas frecuentes
+            </h2>
+            
+            <div className="space-y-8">
+              {[
+                {
+                  q: "¿Qué tipo de IA utilizan?",
+                  a: "Trabajamos principalmente con OpenAI (GPT-4) y Claude AI para asistentes virtuales, OCR y clasificación. La IA específica depende del caso de uso y presupuesto."
+                },
+                {
+                  q: "¿Cuánto tarda la implementación?",
+                  a: "Entre 1-6 semanas dependiendo de la complejidad. Email automation típicamente 1-2 semanas. Proyectos con IA custom 3-6 semanas."
+                },
+                {
+                  q: "¿Necesito conocimientos técnicos?",
+                  a: "No. Nos encargamos de todo el setup técnico y formamos a tu equipo para usar las automatizaciones."
+                },
+                {
+                  q: "¿Qué pasa si algo deja de funcionar?",
+                  a: "Todos los paquetes incluyen 2-3 meses de soporte técnico. Después ofrecemos planes de mantenimiento desde €200/mes."
+                },
+                {
+                  q: "¿Puedo automatizar redes sociales?",
+                  a: "Sí, pero nos enfocamos en automatizaciones operativas B2B: captura de leads desde LinkedIn/Instagram a CRM, social listening, y reporting multi-plataforma. No hacemos creación de contenido ni community management."
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="border-b border-gray-200 pb-8 last:border-0">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    {faq.q}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA - Bold but clean */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              ¿Listo para automatizar con IA?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Consulta gratuita de 30 minutos. Analizamos tu negocio y te mostramos 
+              exactamente qué puedes automatizar.
+            </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-lg text-lg font-semibold hover:bg-gray-800 transition-colors"
+            >
+              Reservar consulta
+            </a>
+            <p className="mt-4 text-sm text-gray-500">
+              Sin compromiso · Sin coste · 30 minutos
             </p>
           </div>
+        </section>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              {
-                step: "01",
-                title: "Análisis",
-                description: "Auditoría gratuita de tus procesos actuales y identificación de oportunidades",
-                duration: "2-3 días"
-              },
-              {
-                step: "02", 
-                title: "Diseño",
-                description: "Creamos el plan de automatización específico con ROI proyectado",
-                duration: "3-5 días"
-              },
-              {
-                step: "03",
-                title: "Desarrollo",
-                description: "Implementamos y configuramos todas las automatizaciones",
-                duration: "1-3 semanas"
-              },
-              {
-                step: "04",
-                title: "Optimización",
-                description: "Testing, ajustes y formación para maximizar los resultados",
-                duration: "2-4 semanas"
-              }
-            ].map((phase, index) => (
-              <div key={index} className="text-center">
-                <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {phase.step}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {phase.title}
-                </h3>
-                <p className="text-gray-600 mb-2">
-                  {phase.description}
-                </p>
-                <p className="text-sm text-blue-600 font-semibold">
-                  {phase.duration}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Preguntas Frecuentes
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {[
-              {
-                q: "¿Cuánto tiempo tarda en verse el ROI?",
-                a: "Típicamente entre 2-4 semanas después de la implementación. Los clientes reportan ahorros inmediatos en tiempo y reducción de errores desde el primer mes."
-              },
-              {
-                q: "¿Qué pasa si mi herramienta no está en la lista?",
-                a: "Nuestras soluciones conectan con +400 servicios y podemos crear integraciones custom via API. Si tu herramienta tiene API, la conectamos."
-              },
-              {
-                q: "¿Incluye soporte técnico?",
-                a: "Sí, todos los paquetes incluyen 2-3 meses de soporte técnico completo. Después ofrecemos planes de mantenimiento desde €200/mes."
-              },
-              {
-                q: "¿Necesito conocimientos técnicos?",
-                a: "No. Nos encargamos de todo y formamos a tu equipo. Las automatizaciones funcionan completamente en background."
-              },
-              {
-                q: "¿Cómo garantizan la seguridad de mis datos?",
-                a: "Utilizamos protocolos de seguridad estándar de la industria y todas las integraciones se realizan con tokens seguros y encriptación SSL."
-              },
-              {
-                q: "¿Puedo cancelar el servicio cuando quiera?",
-                a: "Sí, no hay permanencia. Las automatizaciones seguirán funcionando independientemente y puedes cancelar el soporte cuando desees."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {faq.q}
-                </h3>
-                <p className="text-gray-700">
-                  {faq.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            ¿Listo para automatizar tu negocio?
-          </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Consulta gratuita de 30 minutos para analizar tu caso específico
-          </p>
-          <Link 
-            href="/contact"
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
-          >
-            Reservar Consulta Gratuita
-          </Link>
-        </div>
-      </section>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

@@ -1,11 +1,15 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+import Link from 'next/link';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   children: ReactNode;
   isLoading?: boolean;
-}
+  className?: string;
+  fullWidth?: boolean;
+  href?: string;
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'>;
 
 export function Button({ 
   variant = 'primary', 
@@ -14,6 +18,8 @@ export function Button({
   isLoading = false,
   disabled,
   className = '',
+  fullWidth = false,
+  href,
   ...props 
 }: ButtonProps) {
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
@@ -31,14 +37,12 @@ export function Button({
     lg: 'px-6 py-4 text-lg'
   };
   
-  const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+  const widthClass = fullWidth ? 'w-full' : '';
   
-  return (
-    <button 
-      className={classes} 
-      disabled={disabled || isLoading}
-      {...props}
-    >
+  const classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${widthClass} ${className}`;
+  
+  const content = (
+    <>
       {isLoading && (
         <svg className="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -46,6 +50,26 @@ export function Button({
         </svg>
       )}
       {children}
+    </>
+  );
+
+  // Si tiene href, renderizar como Link
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {content}
+      </Link>
+    );
+  }
+
+  // Si no, renderizar como button
+  return (
+    <button 
+      className={classes} 
+      disabled={disabled || isLoading}
+      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
+      {content}
     </button>
   );
 }
